@@ -1,6 +1,6 @@
 import axios from 'axios'
 export const getMovies = async () => {
-  const url = `/api/movie/`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/movie/`;
   try {
     const response = await axios.get(url);
     return { response, isError: false };
@@ -11,7 +11,7 @@ export const getMovies = async () => {
 
 
 export const getMovie = async (id) => {
-  const url = `/api/movie/${id}/`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/movie/${id}/`;
   try {
     const response = await axios.get(url);
     return { response, isError: false };
